@@ -1393,7 +1393,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EngineHealth: 100
   MoveSpeed: 10
-  isOptimaLoadl: 0
+  isNotRunning: 1
+  isOptimaLoad: 0
   isHighLoad: 0
   isVeryHighLoad: 0
   isExtremeLoad: 0
@@ -2929,6 +2930,7 @@ GameObject:
   - component: {fileID: 1948035300}
   - component: {fileID: 1948035302}
   - component: {fileID: 1948035301}
+  - component: {fileID: 1948035303}
   m_Layer: 5
   m_Name: SpeedPanel
   m_TagString: Untagged
@@ -2957,7 +2959,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -102, y: -228.50002}
+  m_AnchoredPosition: {x: -102, y: -228.5}
   m_SizeDelta: {x: -204, y: -457}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1948035301
@@ -2997,6 +2999,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1948035299}
   m_CullTransparentMesh: 0
+--- !u!114 &1948035303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948035299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e39888babf86e04abbcb455701d97f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OptimalToggle: {fileID: 605527461}
+  HighToggle: {fileID: 1836889083}
+  VeryHighToggle: {fileID: 290365946}
+  ExtremeToggle: {fileID: 1038930202}
+  SleighEngine: {fileID: 771716070}
+  EngineLoad: 0
 --- !u!1 &2031201582
 GameObject:
   m_ObjectHideFlags: 0
