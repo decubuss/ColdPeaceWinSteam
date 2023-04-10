@@ -13,17 +13,21 @@ public enum EngineLoad
 public class RocketSleighEngine : MonoBehaviour
 {
     [SerializeField]
-    public int EngineHealth = 100;
+    public float MoveSpeed = 0f;
     [SerializeField]
-    public float MoveSpeed = 10f;
+    public float CurrentTopSpeed = 15f;
+    [SerializeField]
+    public float TopSpeedReachTime = 100f;
+
+    [SerializeField]
+    public int EngineHealth = 100;
+    
+    [SerializeField]
+    private EngineLoad EngineLoad;
     //[SerializeField]
     //private EngineLoadDisplayer EngineLoadDisplayer;
 
     public bool isNotRunning = true;
-    public bool isOptimaLoad = false;
-    public bool isHighLoad = false;
-    public bool isVeryHighLoad = false;
-    public bool isExtremeLoad = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,28 +37,65 @@ public class RocketSleighEngine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isNotRunning == true) { MoveSpeed = 0f; }
+        //if (isNotRunning == true) { MoveSpeed = 0f; }
     }
 
     public void OptimalHandler(bool isOn)
     {
-        isOptimaLoad = isOn;
-        //Debug.Log("Optimal da value is " + OptimalToggle.isOn);
+        if (isOn)
+            EngineLoad = EngineLoad.Optimal;
+        else
+            EngineLoad = EngineLoad.NotRunning;
+        ChangeSpeed();
     }
     public void HighHandler(bool isOn)
     {
-        isHighLoad = isOn;
-        //Debug.Log("High da value is " + HighToggle.isOn);
+        if (isOn)
+            EngineLoad = EngineLoad.High;
+        else
+            EngineLoad = EngineLoad.Optimal;
+        ChangeSpeed();
     }
     public void VeryHighHandler(bool isOn)
     {
-        isVeryHighLoad = isOn;
-        //Debug.Log("Very High da value is " + VeryHighToggle.isOn);
+        if (isOn)
+            EngineLoad = EngineLoad.VeryHigh;
+        else
+            EngineLoad = EngineLoad.High;
+        ChangeSpeed();
     }
     public void ExtremeHandler(bool isOn)
     {
-        isExtremeLoad = isOn;
-        //Debug.Log("Extreme da value is " + ExtremeToggle.isOn);
+        if (isOn)
+            EngineLoad = EngineLoad.Extreme;
+        else
+            EngineLoad = EngineLoad.VeryHigh;
+        ChangeSpeed();
+    }
+    private void ChangeSpeed()
+    {
+        switch (EngineLoad)
+        {
+            case EngineLoad.NotRunning:
+                MoveSpeed = 0f;
+                break;
+            case EngineLoad.Optimal:
+                MoveSpeed = 10f;
+                break;
+            case EngineLoad.High:
+                MoveSpeed = 20f;
+                break;
+            case EngineLoad.VeryHigh:
+                MoveSpeed = 40f;
+                break;
+            case EngineLoad.Extreme:
+                MoveSpeed = 80f;
+                break;
+        }
+    }
+    private void ChangeAcceleration()
+    {
+
     }
 
 }
