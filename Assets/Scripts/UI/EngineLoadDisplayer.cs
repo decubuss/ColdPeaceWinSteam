@@ -13,6 +13,7 @@ public class EngineLoadDisplayer : MonoBehaviour
     private Toggle VeryHighToggle;
     [SerializeField]
     private Toggle ExtremeToggle;
+    private Toggle[] Toggles = new Toggle[4];
 
     [SerializeField]
     private RocketSleighEngine SleighEngine;
@@ -26,12 +27,22 @@ public class EngineLoadDisplayer : MonoBehaviour
         VeryHighToggle.onValueChanged.AddListener(SleighEngine.VeryHighHandler);
         ExtremeToggle.onValueChanged.AddListener(SleighEngine.ExtremeHandler);
 
+        Toggles = new Toggle[]
+        {
+            OptimalToggle,
+            HighToggle,
+            VeryHighToggle,
+            ExtremeToggle
+        };
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    private void VisualHandler() { 
     }
 
 }

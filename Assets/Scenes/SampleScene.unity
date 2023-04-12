@@ -1391,9 +1391,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a1c7c10eb3b0bf45bbcba408ac6ebbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 10
-  CurrentTopSpeed: 15
-  TopSpeedReachTime: 100
+  MoveSpeed: 0
+  CurrentTopSpeed: 0
+  TopSpeedReachTime: 50
   EngineHealth: 100
   EngineLoad: 0
   isNotRunning: 1
