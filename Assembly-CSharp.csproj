@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\Character\RocketSleighEngine.cs" />
     <Compile Include="Assets\Scripts\Enviroment\EnviromentInputs.cs" />
     <Compile Include="Assets\Scripts\UI\EngineLoadDisplayer.cs" />
+    <Compile Include="Assets\Scripts\UI\InteractiveMap.cs" />
     <Compile Include="Assets\Scripts\UI\MainCountdownUI.cs" />
     <Compile Include="Assets\Scripts\UI\RouteDisplayer.cs" />
     <Reference Include="UnityEngine">

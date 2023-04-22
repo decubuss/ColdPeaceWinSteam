@@ -517,6 +517,7 @@ GameObject:
   - component: {fileID: 445623458}
   - component: {fileID: 445623460}
   - component: {fileID: 445623459}
+  - component: {fileID: 445623461}
   m_Layer: 5
   m_Name: MapImage
   m_TagString: Untagged
@@ -541,7 +542,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.0467796, y: -0.000020379877}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 2158.1924, y: 1127.448}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &445623459
@@ -581,6 +582,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 445623457}
   m_CullTransparentMesh: 0
+--- !u!114 &445623461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 445623457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03801b715095c7c4e8e94e316505781a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MapImage: {fileID: 445623459}
+  DestinationPin: {fileID: 679236788}
+  localSpace: {fileID: 1598478882}
 --- !u!1 &512846624
 GameObject:
   m_ObjectHideFlags: 0
@@ -984,7 +1000,7 @@ GameObject:
   - component: {fileID: 679236789}
   - component: {fileID: 679236788}
   m_Layer: 5
-  m_Name: AFCell
+  m_Name: Destination
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1006,7 +1022,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -299, y: 133}
+  m_AnchoredPosition: {x: 61, y: 34}
   m_SizeDelta: {x: 10, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &679236788
@@ -1394,8 +1410,9 @@ MonoBehaviour:
   MoveSpeed: 0
   CurrentTopSpeed: 0
   TopSpeedReachTime: 50
+  CeilingSpeedReachTime: 50
   EngineHealth: 100
-  EngineLoad: 0
+  _engineLoad: 0
   isNotRunning: 1
 --- !u!4 &771716071
 Transform:
@@ -1808,12 +1825,12 @@ GameObject:
   - component: {fileID: 1078763278}
   - component: {fileID: 1078763279}
   m_Layer: 5
-  m_Name: Line
+  m_Name: RouteLineDisplayer
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1078763278
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1877,7 +1894,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 0}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.03
+    widthMultiplier: 10
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -3203,7 +3220,7 @@ Canvas:
   m_GameObject: {fileID: 2032998893}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
