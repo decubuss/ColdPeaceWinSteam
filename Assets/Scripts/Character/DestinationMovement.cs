@@ -10,12 +10,15 @@ public class DestinationMovement : MonoBehaviour
     private RectTransform TransformSelf;
     [SerializeField]
     public RectTransform DestinationTransform;
+
     [SerializeField]
     private RocketSleighEngine Engine;
+    [SerializeField]
+    private EncounterDetector EncounterDetector;
 
     void Start()
     {
-
+        if(!TransformSelf) TransformSelf = gameObject.GetComponent<RectTransform>();
     }
 
     // Update is called once per frame
@@ -24,6 +27,7 @@ public class DestinationMovement : MonoBehaviour
         Vector3 direction = DestinationTransform.localPosition - TransformSelf.localPosition;
         float distance = Vector3.Distance(TransformSelf.localPosition,
                                           DestinationTransform.localPosition);
+        //TODO - add movemnt after destination changes
         if (distance > 0)
         {
             Vector3 newPosition = 
@@ -31,5 +35,12 @@ public class DestinationMovement : MonoBehaviour
                 (direction.normalized * Engine.MoveSpeed * Time.deltaTime);
             TransformSelf.localPosition = newPosition;
         }
+        else
+        {
+            EncounterDetector.FindClosestEncounter();
+            Engine.FullHalt();
+            DestinationTransform.GetComponent<DestinationPin>().IsReached = true;
+        }
     }
+    //TODO: check or event triggers for different occastions if locations is actually real and ocuppied/visible
 }

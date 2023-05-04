@@ -19,16 +19,13 @@ public class RocketSleighEngine : MonoBehaviour
     [SerializeField]
     public float TopSpeedReachTime = 100f;
     [SerializeField]
-    public float CeilingSpeedReachTime = 50f;
+    public float DecreasedSpeedReachTime = 10f;
 
     [SerializeField]
     public int EngineHealth = 100;
     
     [SerializeField]
     private EngineLoad _engineLoad;
-
-    //[SerializeField]
-    //private EngineLoadDisplayer EngineLoadDisplayer;
 
     public bool isNotRunning = true;
     // Start is called before the first frame update
@@ -40,8 +37,6 @@ public class RocketSleighEngine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (isNotRunning == true) { MoveSpeed = 0f; }
-        //TODO: add speed falldown/decrease
         if (MoveSpeed < CurrentTopSpeed && _engineLoad != EngineLoad.NotRunning)
         {
             var acceleration = (CurrentTopSpeed - 0) / /*delta speed*/
@@ -53,7 +48,7 @@ public class RocketSleighEngine : MonoBehaviour
         else if (MoveSpeed > CurrentTopSpeed)
         {
             var decceleration = (MoveSpeed - CurrentTopSpeed) / /*delta speed*/
-                                (CeilingSpeedReachTime - 0f); //delta time
+                                (DecreasedSpeedReachTime - 0f); //delta time
             MoveSpeed -= decceleration * Time.deltaTime;
         }
     }
@@ -119,6 +114,12 @@ public class RocketSleighEngine : MonoBehaviour
     private void ChangeAcceleration()
     {
 
+    }
+
+    public void FullHalt()
+    {
+        _engineLoad = EngineLoad.NotRunning;
+        isNotRunning = true;
     }
 
 }

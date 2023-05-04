@@ -27,13 +27,15 @@ public class InteractiveMap : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData) // 3
     {
-        //print("I was clicked");
-        //print(eventData.position);
         Debug.Log(localSpace.InverseTransformPoint(eventData.position));
         var desiredPosition = localSpace.InverseTransformPoint(eventData.position);
-        //DestinationPin.rectTransform.parent = null;
         DestinationPin.rectTransform.localPosition = desiredPosition;
-        //TODO: fix localspace convertion it is nnot working at the moment
-        //DestinationPin.rectTransform.localPosition = MapImage.rectTransform.InverseTransformPoint((Vector3)eventData.position);
+        NewDestinationSet();
+    }
+
+    private void NewDestinationSet()
+    {
+        //TODO: add distance check between Sleigh and Dest
+        DestinationPin.GetComponent<DestinationPin>().IsReached = false;
     }
 }

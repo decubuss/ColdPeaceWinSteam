@@ -64,8 +64,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Character\DestinationMovement.cs" />
+    <Compile Include="Assets\Scripts\Character\EncounterDetector.cs" />
     <Compile Include="Assets\Scripts\Character\RocketSleighEngine.cs" />
     <Compile Include="Assets\Scripts\Enviroment\EnviromentInputs.cs" />
+    <Compile Include="Assets\Scripts\LocationLogic\ArmedForcesLocation.cs" />
+    <Compile Include="Assets\Scripts\LocationLogic\ILocation.cs" />
+    <Compile Include="Assets\Scripts\UI\DestinationPin.cs" />
     <Compile Include="Assets\Scripts\UI\EngineLoadDisplayer.cs" />
     <Compile Include="Assets\Scripts\UI\InteractiveMap.cs" />
     <Compile Include="Assets\Scripts\UI\MainCountdownUI.cs" />
