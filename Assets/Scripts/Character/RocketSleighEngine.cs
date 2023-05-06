@@ -119,6 +119,7 @@ public class RocketSleighEngine : MonoBehaviour
     public void FullHalt()
     {
         _engineLoad = EngineLoad.NotRunning;
+        MoveSpeed = 0;
         isNotRunning = true;
     }
 

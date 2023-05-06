@@ -5,16 +5,17 @@ using UnityEngine.UI;
 
 public class DestinationMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
-    [SerializeField]
-    private RectTransform TransformSelf;
-    [SerializeField]
-    public RectTransform DestinationTransform;
-
+    [Header("Sleigh Elements")]
     [SerializeField]
     private RocketSleighEngine Engine;
     [SerializeField]
     private EncounterDetector EncounterDetector;
+
+
+    [SerializeField]
+    private RectTransform TransformSelf;
+    [SerializeField]
+    public RectTransform DestinationTransform;
 
     void Start()
     {
@@ -28,7 +29,7 @@ public class DestinationMovement : MonoBehaviour
         float distance = Vector3.Distance(TransformSelf.localPosition,
                                           DestinationTransform.localPosition);
         //TODO - add movemnt after destination changes
-        if (distance > 0)
+        if (distance > 0.5f)
         {
             Vector3 newPosition = 
                 TransformSelf.localPosition + 

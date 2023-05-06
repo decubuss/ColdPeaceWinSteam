@@ -1148,6 +1148,7 @@ GameObject:
   - component: {fileID: 679236787}
   - component: {fileID: 679236789}
   - component: {fileID: 679236788}
+  - component: {fileID: 679236790}
   m_Layer: 5
   m_Name: Destination
   m_TagString: Untagged
@@ -1211,6 +1212,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 679236786}
   m_CullTransparentMesh: 0
+--- !u!114 &679236790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679236786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76bc719178d6b4142b00b1570f1f75d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isReached: 0
 --- !u!1 &683532576
 GameObject:
   m_ObjectHideFlags: 0
@@ -2775,10 +2789,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 052cd117d6ef18f4c90c2496be84748c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TransformSelf: {fileID: 1800690657}
-  DestinationTransform: {fileID: 679236787}
   Engine: {fileID: 771716070}
   EncounterDetector: {fileID: 1800690661}
+  TransformSelf: {fileID: 1800690657}
+  DestinationTransform: {fileID: 679236787}
 --- !u!114 &1800690659
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestinationPin 
+public class DestinationPin : MonoBehaviour
 {
     [SerializeField]
     private bool _isReached;
@@ -10,7 +10,7 @@ public class DestinationPin
     public bool IsReached
     {
         get { return _isReached; }
-        set { IsReached = value; }
+        set { _isReached = value; }
     }
 
 }
