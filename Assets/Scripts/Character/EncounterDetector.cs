@@ -4,13 +4,24 @@ using UnityEngine;
 using System.Linq;
 using System;
 
+
+
 public class EncounterDetector : MonoBehaviour
 {
     [SerializeField]
     private EnviromentInputs Environement;
     [SerializeField]
     private RectTransform TransformSelf;
-    // Start is called before the first frame update
+    [SerializeField]
+    private float _detectionRange = 5f;
+
+    public delegate void EncounterInVisRange();
+    public static event EncounterInVisRange onEncounterVisible;
+
+    void OnEnable()
+    {
+        EnviromentInputs.onWeatherChange += DetectionRangeUpdate;
+    }
     void Start()
     {
         
@@ -19,6 +30,11 @@ public class EncounterDetector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+    }
+
+    private void DetectionRangeUpdate()
+    {
+
     }
 
     public RectTransform FindClosestEncounter()
@@ -43,6 +59,7 @@ public class EncounterDetector : MonoBehaviour
             }
         }
 
+        if (closestDistance <= _detectionRange) onEncounterVisible();
         return Environement.ArmedForcesCells[closestPointIndex];
     }
 }

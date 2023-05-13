@@ -17,10 +17,10 @@ public class MainCountdownUI : MonoBehaviour
     [SerializeField]
     private EnviromentInputs EnviromentInputs; 
 
-    private float StormInitial = 0;
+    private float StormTimer = 0;
     private void Awake()
     {
-        StormInitial = EnviromentInputs.TimeBeforeStormGlobal;
+        StormTimer = EnviromentInputs.TimeBeforeStormGlobal;
     }
     void Start()
     {
@@ -30,10 +30,10 @@ public class MainCountdownUI : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        StormInitial -= 1 * Time.deltaTime;
-        HoursText.text = HoursDisplay(TimeSpan.FromSeconds((double)StormInitial));
-        MinutesText.text = MinutesDisplay(TimeSpan.FromSeconds((double)StormInitial));
-        SecondsText.text = SecondsDisplay(TimeSpan.FromSeconds((double)StormInitial));
+        StormTimer -= 1 * Time.deltaTime;//cant throw the timer from Environment class - it dispalyas wrong, this one working so far
+        HoursText.text = HoursDisplay(TimeSpan.FromSeconds((double)StormTimer));
+        MinutesText.text = MinutesDisplay(TimeSpan.FromSeconds((double)StormTimer));
+        SecondsText.text = SecondsDisplay(TimeSpan.FromSeconds((double)StormTimer));
     }
 
     private string HoursDisplay(TimeSpan span)
