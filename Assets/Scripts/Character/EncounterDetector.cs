@@ -15,8 +15,10 @@ public class EncounterDetector : MonoBehaviour
     [SerializeField]
     private float _detectionRange = 5f;
 
-    public delegate void EncounterInVisRange();
-    public static event EncounterInVisRange onEncounterVisible;
+    public List<Location> VisibleLocations;
+    
+    public delegate void EncounterListUpdated();
+    public static event EncounterListUpdated OnEncounterListUpdated;
 
     void OnEnable()
     {
@@ -30,6 +32,7 @@ public class EncounterDetector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        FindVisibleEncounters();
     }
 
     private void DetectionRangeUpdate()
@@ -59,7 +62,39 @@ public class EncounterDetector : MonoBehaviour
             }
         }
 
-        if (closestDistance <= _detectionRange) onEncounterVisible();
+        if (closestDistance <= _detectionRange) OnEncounterListUpdated();
         return Environement.ArmedForcesCells[closestPointIndex];
+    }
+
+    private void FindVisibleEncounters()
+    {
+        var points = Environement.ArmedForcesCells.ToArray();
+        for (int i = 0; i < points.Length; i++)
+        {
+            float distance = Vector2.Distance(TransformSelf.localPosition, points[i].localPosition);
+            var location = points[i].GetComponent<Location>();
+            var isLocationInList = VisibleLocations.Contains(location);
+            if (distance < _detectionRange && location != null && !isLocationInList)
+            {
+                Debug.Log("there is a " + location.name + " nearby");
+                VisibleLocations.Add(location);
+                OnEncounterListUpdated();
+            }
+        }
+        FindNotVisibleEncounters();
+    }
+    
+    private void FindNotVisibleEncounters()
+    {
+        foreach(var loc in VisibleLocations)
+        {
+            float distance = Vector2.Distance(TransformSelf.localPosition, 
+                                              loc.gameObject.transform.localPosition);
+            if (distance < _detectionRange)
+            {
+                VisibleLocations.Remove(loc);
+                OnEncounterListUpdated();
+            }
+        }
     }
 }
