@@ -5,7 +5,8 @@ using UnityEngine;
 public class Location : MonoBehaviour
 {
     // Start is called before the first frame update
-    private bool isRevealed = false;
+    private bool isRevealed = true;
+    [SerializeField]
     private string _name;
     [SerializeField]
     public string Name

@@ -6,10 +6,13 @@ using UnityEngine.UI;
 public class VisibleEncountersDisplay : MonoBehaviour
 {
     [SerializeField]
-    private List<GameObject> EncounterList;
+    private EncounterDetector Detector;
 
     [SerializeField]
-    public GameObject EncounterLine;
+    private GameObject EncounterLine;
+
+    [SerializeField]
+    private GameObject GridLayoutPanel;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +26,12 @@ public class VisibleEncountersDisplay : MonoBehaviour
     }
     private void UpdateEncountersList()
     {
-
+        foreach(var loc in Detector.VisibleLocations)
+        {
+            var textLine = Instantiate(EncounterLine);
+            textLine.transform.SetParent(GridLayoutPanel.transform);
+            textLine.GetComponentInChildren<Text>().text = loc.Name;
+            var list = new List<GameObject>();
+        }
     }
 }

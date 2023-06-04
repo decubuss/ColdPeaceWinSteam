@@ -845,8 +845,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9c49b6756ae2974194bb8a84fb1de75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EncounterList: []
+  Detector: {fileID: 1800690661}
   EncounterLine: {fileID: 7211286212193924148}
+  GridLayoutPanel: {fileID: 1712628589}
 --- !u!1 &546063339
 GameObject:
   m_ObjectHideFlags: 0
@@ -1008,6 +1009,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6248ce955563bd141966e7e2c881d57b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _name: Alagarta Cell
 --- !u!1 &551506103
 GameObject:
   m_ObjectHideFlags: 0
@@ -1261,6 +1263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6248ce955563bd141966e7e2c881d57b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _name: Kintlet Cell
 --- !u!1 &679236786
 GameObject:
   m_ObjectHideFlags: 0

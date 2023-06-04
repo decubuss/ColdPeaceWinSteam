@@ -27,7 +27,6 @@ public class InteractiveMap : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData) // 3
     {
-        Debug.Log(localSpace.InverseTransformPoint(eventData.position));
         var desiredPosition = localSpace.InverseTransformPoint(eventData.position);
         DestinationPin.rectTransform.localPosition = desiredPosition;
         NewDestinationSet();
