@@ -19,6 +19,6 @@ public class Chauffeur : MonoBehaviour
     }
     private void AddAvaiableEncounter()
     {
-        Debug.Log("the encounter available");
+        //Debug.Log("the encounter available");
     }
 }

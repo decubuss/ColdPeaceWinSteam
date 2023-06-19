@@ -90,7 +90,7 @@ public class EncounterDetector : MonoBehaviour
         {
             float distance = Vector2.Distance(TransformSelf.localPosition, 
                                               loc.gameObject.transform.localPosition);
-            if (distance < _detectionRange)
+            if (distance > _detectionRange)
             {
                 VisibleLocations.Remove(loc);
                 OnEncounterListUpdated();
