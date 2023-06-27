@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 public class VisibleEncountersDisplay : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class VisibleEncountersDisplay : MonoBehaviour
     [SerializeField]
     private GameObject GridLayoutPanel;
 
-    private List<GameObject> EncounterLines = new List<GameObject>();
+    private List<GameObject> DisplayedLocations = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
     {
@@ -28,24 +29,45 @@ public class VisibleEncountersDisplay : MonoBehaviour
     }
     private void UpdateEncountersList()
     {
-        foreach (var line in EncounterLines)
+        foreach (var line in DisplayedLocations)
         {
             line.SetActive(false);
         }
-        EncounterLines.Clear();
+        DisplayedLocations.Clear();
         foreach(var loc in Detector.VisibleLocations)
         {
 
             var isBoo = Detector.VisibleLocations.IndexOf(loc);
-            if (isBoo >= EncounterLines.Count)
+            if (isBoo >= DisplayedLocations.Count)
             {
-                var additionalLines = Detector.VisibleLocations.Count - EncounterLines.Count;
+                var additionalLines = Detector.VisibleLocations.Count - DisplayedLocations.Count;
                 
             }
             var textLine = Instantiate(EncounterLine);
             textLine.transform.SetParent(GridLayoutPanel.transform);
             textLine.GetComponentInChildren<Text>().text = loc.Name;
-            EncounterLines.Add(textLine);
+            DisplayedLocations.Add(textLine);
         }
+    }
+    private void UpdateEncounterListAlt()
+    {
+        //create list of locations that are no longer visible
+        var displayedLocations = DisplayedLocations.Select(x => x.GetComponent<Location>());
+        var displayedNotVisibleLocs = displayedLocations.Except<Location>(Detector.VisibleLocations);
+        //check if not null
+        if(displayedNotVisibleLocs != null)
+        {
+            //true: delete GO's
+            foreach (var line in displayedNotVisibleLocs)
+            {
+                line.gameObject.SetActive(false);
+                DisplayedLocations.Remove(line.gameObject);
+                Destroy(line.gameObject);
+            }
+        }
+        
+
+        //create lsit of locations visible, but not displayed
+        //instiniiate them
     }
 }
