@@ -846,7 +846,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Detector: {fileID: 1800690661}
-  EncounterLine: {fileID: 2036494176855613445, guid: 43c069029d107e94da042c355b191d0f,
+  EncounterButton: {fileID: 2036494176855613445, guid: 43c069029d107e94da042c355b191d0f,
     type: 3}
   GridLayoutPanel: {fileID: 1712628589}
 --- !u!1 &546063339

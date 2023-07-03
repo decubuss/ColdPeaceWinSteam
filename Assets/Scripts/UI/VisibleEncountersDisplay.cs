@@ -10,7 +10,7 @@ public class VisibleEncountersDisplay : MonoBehaviour
     private EncounterDetector Detector;
 
     [SerializeField]
-    private GameObject EncounterLine;
+    private GameObject EncounterButton;
 
     [SerializeField]
     private GameObject GridLayoutPanel;
@@ -19,7 +19,7 @@ public class VisibleEncountersDisplay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        EncounterDetector.OnEncounterListUpdated += UpdateEncountersList;
+        EncounterDetector.OnEncounterListUpdated += UpdateEncountersListAlt;
     }
 
     // Update is called once per frame
@@ -43,19 +43,21 @@ public class VisibleEncountersDisplay : MonoBehaviour
                 var additionalLines = Detector.VisibleLocations.Count - DisplayedLocations.Count;
                 
             }
-            var textLine = Instantiate(EncounterLine);
+            var textLine = Instantiate(EncounterButton);
             textLine.transform.SetParent(GridLayoutPanel.transform);
             textLine.GetComponentInChildren<Text>().text = loc.Name;
             DisplayedLocations.Add(textLine);
         }
     }
-    private void UpdateEncounterListAlt()
+    private void UpdateEncountersListAlt()
     {
         //create list of locations that are no longer visible
         var displayedLocations = DisplayedLocations.Select(x => x.GetComponent<Location>());
+
         var displayedNotVisibleLocs = displayedLocations.Except<Location>(Detector.VisibleLocations);
+        var locationsToBeDisplayed = Detector.VisibleLocations.Except(displayedLocations);
         //check if not null
-        if(displayedNotVisibleLocs != null)
+        if (displayedNotVisibleLocs != null)
         {
             //true: delete GO's
             foreach (var line in displayedNotVisibleLocs)
@@ -65,9 +67,27 @@ public class VisibleEncountersDisplay : MonoBehaviour
                 Destroy(line.gameObject);
             }
         }
-        
 
-        //create lsit of locations visible, but not displayed
-        //instiniiate them
+        if (locationsToBeDisplayed != null)
+        {
+            foreach(var loc in locationsToBeDisplayed)
+            {
+                CreateEncounterLine(loc);
+            }
+        }
+    }
+
+    private void CreateEncounterLine(Location loc)
+    {
+        var isBoo = Detector.VisibleLocations.IndexOf(loc);
+        if (isBoo >= DisplayedLocations.Count)
+        {
+            var additionalLines = Detector.VisibleLocations.Count - DisplayedLocations.Count;
+
+        }
+        var textLine = Instantiate(EncounterButton);
+        textLine.transform.SetParent(GridLayoutPanel.transform);
+        textLine.GetComponentInChildren<Text>().text = loc.Name;
+        DisplayedLocations.Add(textLine);
     }
 }
