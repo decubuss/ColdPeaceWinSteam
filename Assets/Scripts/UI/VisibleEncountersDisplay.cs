@@ -15,6 +15,7 @@ public class VisibleEncountersDisplay : MonoBehaviour
     [SerializeField]
     private GameObject GridLayoutPanel;
 
+    private List<(Location,GameObject)> DisplayedLocationButtons = new List<(Location, GameObject)>();
     private List<GameObject> DisplayedLocations = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
@@ -27,48 +28,30 @@ public class VisibleEncountersDisplay : MonoBehaviour
     {
         
     }
-    private void UpdateEncountersList()
-    {
-        foreach (var line in DisplayedLocations)
-        {
-            line.SetActive(false);
-        }
-        DisplayedLocations.Clear();
-        foreach(var loc in Detector.VisibleLocations)
-        {
-
-            var isBoo = Detector.VisibleLocations.IndexOf(loc);
-            if (isBoo >= DisplayedLocations.Count)
-            {
-                var additionalLines = Detector.VisibleLocations.Count - DisplayedLocations.Count;
-                
-            }
-            var textLine = Instantiate(EncounterButton);
-            textLine.transform.SetParent(GridLayoutPanel.transform);
-            textLine.GetComponentInChildren<Text>().text = loc.Name;
-            DisplayedLocations.Add(textLine);
-        }
-    }
+    
     private void UpdateEncountersListAlt()
     {
         //create list of locations that are no longer visible
-        var displayedLocations = DisplayedLocations.Select(x => x.GetComponent<Location>());
+        List<Location> displayedLocations = DisplayedLocationButtons.Select(x => x.Item1)
+                                            .ToList();
 
-        var displayedNotVisibleLocs = displayedLocations.Except<Location>(Detector.VisibleLocations);
-        var locationsToBeDisplayed = Detector.VisibleLocations.Except(displayedLocations);
+        List<Location> displayedNotVisibleLocs = displayedLocations.Except<Location>(Detector.VisibleLocations)
+                                                 .ToList();
+        List<Location> locationsToBeDisplayed = Detector.VisibleLocations.Except(displayedLocations)
+                                                .ToList();
         //check if not null
-        if (displayedNotVisibleLocs != null)
+        if (displayedNotVisibleLocs.Count() > 0)
         {
             //true: delete GO's
             foreach (var line in displayedNotVisibleLocs)
             {
+                DisplayedLocationButtons.RemoveAll(x=>x.Item1 == line);
                 line.gameObject.SetActive(false);
-                DisplayedLocations.Remove(line.gameObject);
                 Destroy(line.gameObject);
             }
         }
 
-        if (locationsToBeDisplayed != null)
+        if (locationsToBeDisplayed.Count() > 0)
         {
             foreach(var loc in locationsToBeDisplayed)
             {
@@ -79,15 +62,9 @@ public class VisibleEncountersDisplay : MonoBehaviour
 
     private void CreateEncounterLine(Location loc)
     {
-        var isBoo = Detector.VisibleLocations.IndexOf(loc);
-        if (isBoo >= DisplayedLocations.Count)
-        {
-            var additionalLines = Detector.VisibleLocations.Count - DisplayedLocations.Count;
-
-        }
-        var textLine = Instantiate(EncounterButton);
-        textLine.transform.SetParent(GridLayoutPanel.transform);
-        textLine.GetComponentInChildren<Text>().text = loc.Name;
-        DisplayedLocations.Add(textLine);
+        var encButton = Instantiate(EncounterButton);
+        encButton.transform.SetParent(GridLayoutPanel.transform);
+        encButton.GetComponentInChildren<Text>().text = loc.Name;
+        DisplayedLocationButtons.Add((loc, encButton));
     }
 }
