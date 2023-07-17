@@ -40,22 +40,28 @@ public class VisibleEncountersDisplay : MonoBehaviour
         List<Location> locationsToBeDisplayed = Detector.VisibleLocations.Except(displayedLocations)
                                                 .ToList();
         //check if not null
+        DestroyInvisibleLocationLines(displayedNotVisibleLocs);
+
+        if (locationsToBeDisplayed.Count() > 0)
+        {
+            foreach (var loc in locationsToBeDisplayed)
+            {
+                CreateEncounterLine(loc);
+            }
+        }
+    }
+
+    private void DestroyInvisibleLocationLines(List<Location> displayedNotVisibleLocs)
+    {
         if (displayedNotVisibleLocs.Count() > 0)
         {
             //true: delete GO's
             foreach (var line in displayedNotVisibleLocs)
             {
-                DisplayedLocationButtons.RemoveAll(x=>x.Item1 == line);
-                line.gameObject.SetActive(false);
-                Destroy(line.gameObject);
-            }
-        }
-
-        if (locationsToBeDisplayed.Count() > 0)
-        {
-            foreach(var loc in locationsToBeDisplayed)
-            {
-                CreateEncounterLine(loc);
+                var buttonsTemp = DisplayedLocationButtons.Where(x => x.Item1 == line)
+                                                          .Select(x=> x.Item2).ToList();
+                DisplayedLocationButtons.RemoveAll(x => x.Item1 == line);
+                foreach(var button in buttonsTemp) { Destroy(button); }
             }
         }
     }
