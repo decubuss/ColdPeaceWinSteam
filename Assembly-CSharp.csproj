@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\LocationLogic\ArmedForcesLocation.cs" />
     <Compile Include="Assets\Scripts\LocationLogic\ILocation.cs" />
     <Compile Include="Assets\Scripts\LocationLogic\Location.cs" />
+    <Compile Include="Assets\Scripts\UI\EncounterList\EncounterButton.cs" />
     <Compile Include="Assets\Scripts\UI\Map\DestinationPin.cs" />
     <Compile Include="Assets\Scripts\UI\Map\InteractiveMap.cs" />
     <Compile Include="Assets\Scripts\UI\Map\RouteDisplayer.cs" />

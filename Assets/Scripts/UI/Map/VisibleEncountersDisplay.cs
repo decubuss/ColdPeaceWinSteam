@@ -46,7 +46,7 @@ public class VisibleEncountersDisplay : MonoBehaviour
         {
             foreach (var loc in locationsToBeDisplayed)
             {
-                CreateEncounterLine(loc);
+                CreateEncounterButton(loc);
             }
         }
     }
@@ -66,7 +66,7 @@ public class VisibleEncountersDisplay : MonoBehaviour
         }
     }
 
-    private void CreateEncounterLine(Location loc)
+    private void CreateEncounterButton(Location loc)
     {
         var encButton = Instantiate(EncounterButton);
         encButton.transform.SetParent(GridLayoutPanel.transform);
