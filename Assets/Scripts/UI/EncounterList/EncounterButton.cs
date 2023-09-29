@@ -8,6 +8,12 @@ public class EncounterButton : MonoBehaviour
     // Start is called before the first frame update
     public Location Location;
     private Text buttonText;
+    [SerializeField]
+    private GameObject EncounterPanel;
+    private void Awake()
+    {
+        if (!EncounterPanel) { EncounterPanel = GameObject.Find("EncounterEnteringWindow"); }
+    }
     void Start()
     {
         
