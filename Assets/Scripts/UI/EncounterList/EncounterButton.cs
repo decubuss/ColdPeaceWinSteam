@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class EncounterButton : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class EncounterButton : MonoBehaviour
     [SerializeField]
     private GameObject EncounterPanel;
     private Transform EncounterPanelParent;
+    
     private void Awake()
     {
         if (!EncounterPanel) { EncounterPanel = GameObject.Find("EncounterEnteringWindow"); }
