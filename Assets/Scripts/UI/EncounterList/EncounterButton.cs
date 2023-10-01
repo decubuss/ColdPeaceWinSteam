@@ -7,12 +7,17 @@ public class EncounterButton : MonoBehaviour
 {
     // Start is called before the first frame update
     public Location Location;
+
+    
+    [SerializeField]
     private Text buttonText;
     [SerializeField]
     private GameObject EncounterPanel;
+    private Transform EncounterPanelParent;
     private void Awake()
     {
         if (!EncounterPanel) { EncounterPanel = GameObject.Find("EncounterEnteringWindow"); }
+        if (!EncounterPanelParent) { EncounterPanelParent = GameObject.Find("CabinPanel").transform; }
     }
     void Start()
     {
@@ -24,17 +29,21 @@ public class EncounterButton : MonoBehaviour
     {
         
     }
-    public EncounterButton(Location location,Text text)
-    {
-        Location = location;
-        buttonText = text; //TODO: text changes upon fully discovering, Kenshi-vise
-    }
+    //public EncounterButton(Location location,Text text)
+    //{
+    //    Location = location;
+    //    buttonText = text; //TODO: text changes upon fully discovering, Kenshi-vise
+    //}
 
     /// <summary>
     /// Method calls
     /// </summary>
-    public static void CallEncounterWindow()
+    public void CallEncounterWindow()
     {
         //TODO: call a window, that asks: Proceed or Decline with encounter 
+        Instantiate(EncounterPanel, 
+                    EncounterPanelParent.TransformPoint(0,0,0), 
+                    Quaternion.identity, 
+                    EncounterPanelParent);
     }
 }

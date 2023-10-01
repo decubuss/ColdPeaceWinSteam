@@ -11124,6 +11124,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EncounterEnteringWindow
       objectReference: {fileID: 0}
+    - target: {fileID: 763433962689137584, guid: ae3cf6c86a51ed342b67e1a327eff4dd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 763433962689137587, guid: ae3cf6c86a51ed342b67e1a327eff4dd,
         type: 3}
       propertyPath: m_Pivot.x
@@ -11207,12 +11212,12 @@ PrefabInstance:
     - target: {fileID: 763433962689137587, guid: ae3cf6c86a51ed342b67e1a327eff4dd,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -1.6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 763433962689137587, guid: ae3cf6c86a51ed342b67e1a327eff4dd,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -3.2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 763433962689137587, guid: ae3cf6c86a51ed342b67e1a327eff4dd,
         type: 3}

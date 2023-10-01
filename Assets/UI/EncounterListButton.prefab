@@ -119,7 +119,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6744465955736814734}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -53915108682176734}
+        m_MethodName: CallEncounterWindow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &-53915108682176734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,6 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Location: {fileID: 0}
+  buttonText: {fileID: 1526407324228980899}
   EncounterPanel: {fileID: 763433962689137584, guid: ae3cf6c86a51ed342b67e1a327eff4dd,
     type: 3}
 --- !u!1 &6148858649118670989
@@ -147,7 +159,7 @@ GameObject:
   - component: {fileID: 2026001902128462872}
   - component: {fileID: 1526407324228980899}
   m_Layer: 5
-  m_Name: Text
+  m_Name: EncounterTitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
