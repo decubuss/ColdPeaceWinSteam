@@ -13,11 +13,12 @@ public class EncounterEnteringWindow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        HideIfClickedOutside();
     }
 
-    private void HideIfClickedOutside(GameObject panel)
+    private void HideIfClickedOutside()
     {
+        var panel = gameObject;
         if (Input.GetMouseButton(0) && panel.activeSelf &&
             !RectTransformUtility.RectangleContainsScreenPoint(
                 panel.GetComponent<RectTransform>(),
