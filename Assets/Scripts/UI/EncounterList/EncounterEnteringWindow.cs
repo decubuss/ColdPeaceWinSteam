@@ -1,10 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EncounterEnteringWindow : MonoBehaviour
 {
     // Start is called before the first frame update
+    [SerializeField]
+    private Text EncounterTitle;
+    [SerializeField]
+    private Text EncounterEnteringText;
+    [SerializeField]
+    private Text EncounterEnteringText;
     void Start()
     {
         
@@ -27,5 +34,9 @@ public class EncounterEnteringWindow : MonoBehaviour
         {
             panel.SetActive(false);
         }
+    }
+    private void OnEnable()
+    {
+        
     }
 }
