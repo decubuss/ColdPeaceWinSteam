@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class EncounterEnteringWindow : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField]
-    private Text EncounterTitle;
+    private TextMeshProUGUI EncounterTitle;
     [SerializeField]
-    private Text EncounterEnteringText;
+    private TextMeshProUGUI EncounterEnteringText;
     [SerializeField]
-    private Text EncounterEnteringText;
+    private TextMeshProUGUI EncounterCost;
     void Start()
     {
         

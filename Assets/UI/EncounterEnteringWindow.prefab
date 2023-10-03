@@ -641,6 +641,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b234759aa162c04d9fb1a7e836cde9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EncounterTitle: {fileID: 763433962024840493}
+  EncounterEnteringText: {fileID: 763433961694005294}
+  EncounterCost: {fileID: 763433962458458920}
 --- !u!1 &800179571014004745
 GameObject:
   m_ObjectHideFlags: 0
