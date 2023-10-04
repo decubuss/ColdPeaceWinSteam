@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum EncounterType
+{
+    armedCell,
+    randomInanimate,
+    randomAnimate
+}
 public class Location : MonoBehaviour
 {
-    // Start is called before the first frame update
-    private bool isRevealed = true;
     [SerializeField]
     private string _name;
     [SerializeField]
@@ -19,6 +23,28 @@ public class Location : MonoBehaviour
         set { _name = value; }
     }
 
+    protected EncounterType EncounterType = EncounterType.armedCell;
+
+    [SerializeField]
+    [Tooltip("For encounters, time on interaction not included")]
+    public int enteringCost = 0;
+
+    private bool isRevealed = true;
+    private void Awake()
+    {
+        switch (EncounterType)
+        {
+            case EncounterType.armedCell:
+                enteringCost = 5;
+                break;
+            case EncounterType.randomInanimate:
+                enteringCost = 10;
+                break;
+            case EncounterType.randomAnimate:
+                enteringCost = 5;
+                break;
+        }
+    }
     void Start()
     {
         

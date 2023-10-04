@@ -71,6 +71,7 @@ public class VisibleEncountersDisplay : MonoBehaviour
         var encButton = Instantiate(EncounterButton);
         encButton.transform.SetParent(GridLayoutPanel.transform);
         encButton.GetComponentInChildren<Text>().text = loc.Name;
+        encButton.GetComponent<EncounterButton>().Encounter = loc;
         DisplayedLocationButtons.Add((loc, encButton));
     }
 }

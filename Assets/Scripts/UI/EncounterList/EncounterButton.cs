@@ -7,9 +7,8 @@ using UnityEngine.UIElements;
 public class EncounterButton : MonoBehaviour
 {
     // Start is called before the first frame update
-    public Location Location;
+    public Location Encounter;
 
-    
     [SerializeField]
     private Text buttonText;
     [SerializeField]
@@ -43,9 +42,10 @@ public class EncounterButton : MonoBehaviour
     public void CallEncounterWindow()
     {
         //TODO: call a window, that asks: Proceed or Decline with encounter 
-        Instantiate(EncounterPanel, 
+        var window = Instantiate(EncounterPanel, 
                     EncounterPanelParent.TransformPoint(0,0,0), 
                     Quaternion.identity, 
                     EncounterPanelParent);
+        window.GetComponent<EncounterEnteringWindow>().Encounter = Encounter;
     }
 }
