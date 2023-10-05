@@ -641,6 +641,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b234759aa162c04d9fb1a7e836cde9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _encounter: {fileID: 0}
   EncounterTitle: {fileID: 763433962024840493}
   EncounterEnteringText: {fileID: 763433961694005294}
   EncounterCost: {fileID: 763433962458458920}
@@ -1016,7 +1017,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2439152173427820419}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2652915306690182979}
+        m_MethodName: HideWindow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3926464120868474928
 GameObject:
   m_ObjectHideFlags: 0
