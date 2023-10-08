@@ -18,9 +18,7 @@ public class CanvasesKeeperSingleton : MonoBehaviour
         if (MapCanvas != null) Debug.Log(MapCanvas);
         if (EncounterCanvas != null)
         {
-            EncounterCanvas.SetActive(false);
-            Debug.Log(EncounterCanvas);
-        }
+            EncounterCanvas.SetActive(false);        }
     }
 
     public static void OpenMap()

@@ -36,7 +36,7 @@ public class EncounterEnteringWindow : MonoBehaviour
 
     void Update()
     {
-        HideIfClickedOutside();
+        //HideIfClickedOutside();
     }
 
     private void HideIfClickedOutside()
@@ -49,6 +49,7 @@ public class EncounterEnteringWindow : MonoBehaviour
                 Camera.main))
         {
             HideWindow();
+            Debug.Log("wowo");
         }
     }
     private void LocationSet()
@@ -76,6 +77,7 @@ public class EncounterEnteringWindow : MonoBehaviour
     }
     public void EnterEncounter()
     {
+        HideWindow();
         CanvasesKeeperSingleton.OpenEncounter();
     }
 }
