@@ -64,6 +64,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\EncounterPanel.cs" />
     <Compile Include="Assets\Scripts\Character\Chauffeur.cs" />
     <Compile Include="Assets\Scripts\Character\DestinationMovement.cs" />
     <Compile Include="Assets\Scripts\Character\EncounterDetector.cs" />
