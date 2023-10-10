@@ -27,8 +27,9 @@ public class CanvasesKeeperSingleton : MonoBehaviour
         MapCanvas.SetActive(true);
     }
 
-    public static void OpenEncounter(/*Location encounter*/)
+    public static void OpenEncounter(Location encounter)
     {
+        CurrentLocation = encounter;
         MapCanvas.SetActive(false);
         EncounterCanvas.SetActive(true);
     }

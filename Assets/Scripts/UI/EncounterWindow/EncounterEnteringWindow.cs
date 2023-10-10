@@ -78,6 +78,6 @@ public class EncounterEnteringWindow : MonoBehaviour
     public void EnterEncounter()
     {
         HideWindow();
-        CanvasesKeeperSingleton.OpenEncounter();
+        CanvasesKeeperSingleton.OpenEncounter(_encounter);
     }
 }

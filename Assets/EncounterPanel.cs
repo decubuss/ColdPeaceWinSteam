@@ -7,7 +7,25 @@ public class EncounterPanel : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField]
-    public Location CurrentEncounter;
+    private Location _currentEncounter;
+
+    [SerializeField]
+    public Location CurrentEncounter
+    {
+        get
+        {
+            return _currentEncounter;
+        }
+        set
+        {
+            if (_currentEncounter == null)
+            {
+                _currentEncounter = value;
+                EncounterSet();
+            }
+            _currentEncounter = value;
+        }
+    }
 
     [Tooltip("Encounter general ")]
     [SerializeField]
@@ -33,9 +51,12 @@ public class EncounterPanel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (CurrentEncounter != null)
-        {
+       
+    }
 
-        }
+    private void EncounterSet()
+    {
+        EncounterTitle.text = CurrentEncounter.Name;
+        EncounterSubject.text = CurrentEncounter.Name;
     }
 }
