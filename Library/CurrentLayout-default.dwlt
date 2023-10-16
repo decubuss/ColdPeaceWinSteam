@@ -74,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 276, y: 192}
   m_MaxSize: {x: 4001, y: 8042}
   vertical: 1
-  controlID: 92
+  controlID: 91
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 141
+  controlID: 140
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -271,7 +271,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 142
+  controlID: 141
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -296,7 +296,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 143
+  controlID: 142
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -497,7 +497,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 15414
+  m_LastSelectedObjectID: 15614
 --- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -629,19 +629,19 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/LocationLogic
+    - Assets/Scripts/Dialogues
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/Scripts/LocationLogic
+  - Assets/Scripts/Dialogues
   m_LastFoldersGridSize: 96
   m_LastProjectPath: C:\Unity Projects\ColdPeaceWinSteam
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 11}
-    m_SelectedIDs: 743f0000
-    m_LastClickedID: 16244
+    m_SelectedIDs: 703f0000
+    m_LastClickedID: 16240
     m_ExpandedIDs: 00000000623f0000643f0000683f000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -793,9 +793,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 363c0000
-      m_LastClickedID: 15414
-      m_ExpandedIDs: 62fbffffea3b0000fe3b0000863c00009a3c00002a3d0000a23d0000
+      m_SelectedIDs: 6c400000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 62fbffffd03b0000fe3c0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -855,9 +855,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 654.9829, y: 433.62802, z: -167.96918}
+    m_Target: {x: 657.16724, y: 284.6405, z: -0.76187944}
     speed: 2
-    m_Value: {x: 654.9829, y: 433.62802, z: -167.96918}
+    m_Value: {x: 657.16724, y: 284.6405, z: -0.76187944}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0

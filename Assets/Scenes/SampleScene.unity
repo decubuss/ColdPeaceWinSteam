@@ -1824,6 +1824,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Alagarta Cell
   enteringCost: 5
+  _battleMorale: 0
+  _selfPreservation: 0
+  _mentalAgility: 0
+  _discipline: 0
 --- !u!114 &312407835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3300,6 +3304,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Alagarta Cell
   enteringCost: 5
+  _battleMorale: 0
+  _selfPreservation: 0
+  _mentalAgility: 0
+  _discipline: 0
 --- !u!1 &551506103
 GameObject:
   m_ObjectHideFlags: 0
@@ -3979,6 +3987,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Kintlet Cell
   enteringCost: 5
+  _battleMorale: 0
+  _selfPreservation: 0
+  _mentalAgility: 0
+  _discipline: 0
 --- !u!1 &679236786
 GameObject:
   m_ObjectHideFlags: 0
@@ -6067,6 +6079,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Kintlet Cell
   enteringCost: 5
+  _battleMorale: 70
+  _selfPreservation: 25
+  _mentalAgility: 20
+  _discipline: 55
 --- !u!114 &1067724353
 MonoBehaviour:
   m_ObjectHideFlags: 0

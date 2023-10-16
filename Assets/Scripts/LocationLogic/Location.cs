@@ -29,6 +29,8 @@ public class Location : MonoBehaviour
     [Tooltip("For encounters, time on interaction not included")]
     public int enteringCost = 0;
 
+    private DialogueSequence Sequence;
+
     private bool isRevealed = true;
     private void Awake()
     {
