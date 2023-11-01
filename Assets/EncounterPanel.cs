@@ -39,6 +39,14 @@ public class EncounterPanel : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI EncounterLine;
 
+    [Tooltip("Output for left response")]
+    [SerializeField]
+    private TextMeshProUGUI LeftResponseLine;
+
+    [Tooltip("Output for right response")]
+    [SerializeField]
+    private TextMeshProUGUI RightResponseLine;
+
     private void OnEnable()
     {
         CurrentEncounter = CanvasesKeeperSingleton.CurrentLocation;
@@ -58,5 +66,6 @@ public class EncounterPanel : MonoBehaviour
     {
         EncounterTitle.text = CurrentEncounter.Name;
         EncounterSubject.text = CurrentEncounter.Name;
+        EncounterLine.text = CurrentEncounter.DialogueTree.CurrentReplica.ReplicaText;
     }
 }

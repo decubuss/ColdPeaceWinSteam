@@ -4,18 +4,8 @@ using UnityEngine;
 
 public class Replica
 {
-    private string ReplicaText;
-    private string LeftAnswerText;
-    private string RightAnswerString;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public string ReplicaText = "Shall I clean this hummock of snow?";
+    public string LeftAnswerText = "Get back to sleigh";
+    public string RightAnswerString = "Clean it, could be treasure";
+    
 }
