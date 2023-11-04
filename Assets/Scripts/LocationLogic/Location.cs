@@ -29,10 +29,8 @@ public class Location : MonoBehaviour
     [Tooltip("For encounters, time on interaction not included")]
     public int enteringCost = 0;
 
-    /// <summary>
-    /// all replicas available for that encounter
-    /// </summary>
-    public DialogueSequence DialogueTree = new DialogueSequence();//TODO: you gotta read from txt or json thing and all, reading goes from Location, not from sequence
+    public Replica StartingReplica;
+    //TODO: add variable from which DialogueSequence is read
 
     private bool isRevealed = true;
     private void Awake()

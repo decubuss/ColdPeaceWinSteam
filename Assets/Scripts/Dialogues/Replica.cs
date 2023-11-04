@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Replica
+[CreateAssetMenu]
+public class Replica : ScriptableObject
 {
     public string ReplicaText = "Shall I clean this hummock of snow?";
     public string LeftAnswerText = "Get back to sleigh";
-    public string RightAnswerString = "Clean it, could be treasure";
+    public string RightAnswerText = "Clean it, could be treasure";
+
+    public Replica NextReplica;
     
 }
