@@ -668,7 +668,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1546114112}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -1101,6 +1101,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 536845047}
   - {fileID: 1647214444}
   - {fileID: 261403922}
   m_Father: {fileID: 1546114112}
@@ -1203,7 +1204,7 @@ RectTransform:
   - {fileID: 1203272838}
   - {fileID: 1722233628}
   m_Father: {fileID: 247633066}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1365,7 +1366,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Alagarta Cell
   enteringCost: 5
-  StartingReplica: {fileID: 11400000, guid: 85d2cefab0ffe8b4b8f20f97df845d5b, type: 2}
+  StartingReplica: {fileID: 11400000, guid: 73e0d2ee71cbf784cba466fddfe3e568, type: 2}
   _battleMorale: 0
   _selfPreservation: 0
   _mentalAgility: 0
@@ -2576,18 +2577,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 536845046}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1626349720}
-  m_Father: {fileID: 1546114112}
-  m_RootOrder: 3
+  m_Father: {fileID: 247633066}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 9, y: -57.227}
-  m_SizeDelta: {x: -408.8758, y: -279.54147}
+  m_AnchoredPosition: {x: 1.2000122, y: -175.02692}
+  m_SizeDelta: {x: -329.30548, y: 180.82266}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &536845048
 MonoBehaviour:
@@ -3459,8 +3460,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -4.0999756, y: 0.002319336}
+  m_SizeDelta: {x: -8.123047, y: 0.004638672}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &980334123
 MonoBehaviour:
@@ -3882,7 +3883,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Kintlet Cell
   enteringCost: 5
-  StartingReplica: {fileID: 11400000, guid: 85d2cefab0ffe8b4b8f20f97df845d5b, type: 2}
+  StartingReplica: {fileID: 11400000, guid: 73e0d2ee71cbf784cba466fddfe3e568, type: 2}
   _battleMorale: 70
   _selfPreservation: 25
   _mentalAgility: 20
@@ -4032,7 +4033,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1546114112}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -4330,7 +4331,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -4351,8 +4352,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 763433961238501634}
-        m_MethodName: HideWindow
+      - m_Target: {fileID: 1546114115}
+        m_MethodName: LeftDecisionChoice
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4431,7 +4432,7 @@ RectTransform:
   m_Children:
   - {fileID: 1057627352}
   m_Father: {fileID: 1546114112}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -5475,7 +5476,6 @@ RectTransform:
   - {fileID: 1783131119}
   - {fileID: 151262477}
   - {fileID: 247633066}
-  - {fileID: 536845047}
   - {fileID: 1212734461}
   - {fileID: 177614993}
   - {fileID: 1112920917}
@@ -5484,8 +5484,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 20.599976, y: -29.799988}
+  m_SizeDelta: {x: 41.148193, y: 59.664795}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1546114113
 MonoBehaviour:
@@ -6049,7 +6049,7 @@ RectTransform:
   m_Children:
   - {fileID: 228022192}
   m_Father: {fileID: 247633066}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -6349,8 +6349,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 763433961238501634}
-        m_MethodName: EnterEncounter
+      - m_Target: {fileID: 1546114115}
+        m_MethodName: RightDecisionChoice
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

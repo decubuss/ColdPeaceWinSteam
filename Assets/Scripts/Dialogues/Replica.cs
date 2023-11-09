@@ -9,6 +9,31 @@ public class Replica : ScriptableObject
     public string LeftAnswerText = "Get back to sleigh";
     public string RightAnswerText = "Clean it, could be treasure";
 
-    public Replica NextReplica;
-    
+    public Replica _leftOptionNextReplica;
+
+    [SerializeField]
+    public Replica LeftOptionNextReplica
+    {
+        get
+        {
+            return _leftOptionNextReplica;
+        }
+        set { _leftOptionNextReplica = value; }
+    }
+
+
+    public Replica _rightOptionNextReplica;
+
+    [SerializeField]
+    public Replica RightOptionNextReplica
+    {
+        get
+        {
+            return _rightOptionNextReplica;
+        }
+        set { _rightOptionNextReplica = value; }
+    }
+
+    public int MinutesCost = 0;
+
 }
