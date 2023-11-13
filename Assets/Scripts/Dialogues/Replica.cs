@@ -35,5 +35,6 @@ public class Replica : ScriptableObject
     }
 
     public int MinutesCost = 0;
+    public bool isOutroReplica;
 
 }

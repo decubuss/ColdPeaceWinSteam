@@ -18,3 +18,4 @@ MonoBehaviour:
   _leftOptionNextReplica: {fileID: 0}
   _rightOptionNextReplica: {fileID: 0}
   MinutesCost: 0
+  isOutroReplica: 1

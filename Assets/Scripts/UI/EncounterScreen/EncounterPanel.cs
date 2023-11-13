@@ -5,10 +5,8 @@ using TMPro;
 
 public class EncounterPanel : MonoBehaviour
 {
-    // Start is called before the first frame update
     [SerializeField]
     private Location _currentEncounter;
-
     [SerializeField]
     public Location CurrentEncounter
     {
@@ -77,12 +75,14 @@ public class EncounterPanel : MonoBehaviour
 
     public void LeftDecisionChoice()
     {
+        OutroCheck(CurrentReplica);
         CurrentReplica = CurrentReplica.LeftOptionNextReplica;
         UpdatePanelText();
     }
 
     public void RightDecisionChoice()
     {
+        OutroCheck(CurrentReplica);
         CurrentReplica = CurrentReplica.RightOptionNextReplica;
         UpdatePanelText();
     }
@@ -94,5 +94,14 @@ public class EncounterPanel : MonoBehaviour
         EncounterLine.text = CurrentReplica.ReplicaText;
         LeftResponseLine.text = CurrentReplica.LeftAnswerText;
         RightResponseLine.text = CurrentReplica.RightAnswerText;
+    }
+
+    private void OutroCheck(Replica replica)
+    {
+        if (replica.isOutroReplica) OutroExecute();
+    }
+    private void OutroExecute()
+    {
+        CanvasesKeeperSingleton.OpenMap();
     }
 }
