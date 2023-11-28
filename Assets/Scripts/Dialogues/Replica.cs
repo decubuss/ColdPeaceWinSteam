@@ -2,6 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum ItemType
+{
+    CaptivesA,   
+    pubSuppliesFromA,
+    IntelForA,
+    Heaters,
+    Medics,
+    CaptivesB,
+    SuppliesFromB,
+    IntelForB
+}
 [CreateAssetMenu]
 public class Replica : ScriptableObject
 {
@@ -21,7 +32,6 @@ public class Replica : ScriptableObject
         set { _leftOptionNextReplica = value; }
     }
 
-
     public Replica _rightOptionNextReplica;
 
     [SerializeField]
@@ -37,4 +47,9 @@ public class Replica : ScriptableObject
     public int MinutesCost = 0;
     public bool isOutroReplica;
 
+    [SerializeField]
+    public List<ItemType> items;
+
+    [SerializeField]
+    public bool isItemReceivedOnLeft;
 }

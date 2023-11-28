@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\Character\DestinationMovement.cs" />
     <Compile Include="Assets\Scripts\Character\EncounterDetector.cs" />
     <Compile Include="Assets\Scripts\Character\RocketSleighEngine.cs" />
+    <Compile Include="Assets\Scripts\Character\RocketSleighInventory.cs" />
     <Compile Include="Assets\Scripts\Dialogues\DialogueSequence.cs" />
     <Compile Include="Assets\Scripts\Dialogues\Replica.cs" />
     <Compile Include="Assets\Scripts\Enviroment\EnviromentInputs.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="Assets\Scripts\UI\CanvasesKeeperSingleton.cs" />
     <Compile Include="Assets\Scripts\UI\EncounterList\EncounterButton.cs" />
     <Compile Include="Assets\Scripts\UI\EncounterScreen\EncounterPanel.cs" />
+    <Compile Include="Assets\Scripts\UI\EncounterScreen\InventoryDisplay.cs" />
     <Compile Include="Assets\Scripts\UI\EncounterWindow\EncounterEnteringWindow.cs" />
     <Compile Include="Assets\Scripts\UI\Map\DestinationPin.cs" />
     <Compile Include="Assets\Scripts\UI\Map\InteractiveMap.cs" />
